@@ -1,0 +1,18 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>add_new_subrecord (DBize::Subrecords)</title>
+<link rel=StyleSheet href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body bgcolor="white">
+<pre><span class="cmt"># File dbize.rb, line 218</span>
+    <span class="kw">def</span> add_new_subrecord(*args)
+      <span class="kw">self</span> &lt;&lt; subclass.new(*args)
+      references.each { |r|
+        <span class="kw">self</span>.last.send(&quot;#{r}=&quot;.intern, send(r))
+      }
+    <span class="kw">end</span></pre>
+</body>
+</html>

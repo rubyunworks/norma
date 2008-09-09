@@ -1,0 +1,28 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>setup (DBize)</title>
+<link rel=StyleSheet href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body bgcolor="white">
+<pre><span class="cmt"># File dbize.rb, line 38</span>
+  <span class="kw">def</span> DBize.setup(id_field=<span class="kw">nil</span>)
+    <span class="kw">if</span> id_field
+      @@id_field = id_field
+    <span class="kw">else</span>
+      <span class="kw">if</span> @@dbi
+        possible_ids = @@dbi.meta_names &amp; [<span class="str">'id'</span>, <span class="str">'recordno'</span>, <span class="str">'recno'</span>, <span class="str">'record'</span>]
+        <span class="kw">if</span> possible_ids.empty?
+          raise <span class="str">'indeterminate id field'</span>
+        <span class="kw">else</span>
+          @@id_field = possible_ids[0]
+        <span class="kw">end</span>
+      <span class="kw">else</span>
+        raise <span class="str">'indeterminate id field'</span>
+      <span class="kw">end</span>
+    <span class="kw">end</span>
+  <span class="kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,197 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html><head>
+  <title>Class: DBize::DBConnection</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel=StyleSheet href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript" language="JavaScript">
+  <!--
+  function popCode(url) {
+    window.open(url, "Code", 
+          "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+  //-->
+  </script>
+</head>
+
+<body bgcolor="white">
+
+<table summary="Information on class" width="100%" border="0" cellspacing="0">
+ <tr class="title-row">
+ <td class="big-title-font">
+   <sup><font color="aqua">Class</font></sup> DBize::DBConnection
+ </td>
+ <td align="right">
+   <table summary="layout" cellspacing="0" cellpadding="2">
+     <tr valign="top">
+      <td class="small-title-font">In:</td>
+      <td class="small-title-font">
+        <a href="../../files/dbize_rb.html" class="aqua">
+dbize.rb
+         </a>
+<br />
+      </td>
+     </tr>
+     <tr>
+      <td class="small-title-font">Parent:</td>
+      <td class="small-title-font">
+Object
+      </td>
+     </tr>
+   </table>
+  </td>
+  </tr>
+</table>
+  <!-- banner header -->
+
+
+
+<div class="description"><p>
+Common class for accessing a database Provides some extra functionality
+</p>
+</div>
+
+
+<table summary="Methods" cellpadding="5" width="100%">
+<tr><td class="tablesubtitle">Methods</td></tr>
+</table>
+<div class="name-list">
+<a href="#M000019">close</a>&nbsp; &nbsp;
+<a href="#M000020">load_meta</a>&nbsp; &nbsp;
+<a href="#M000018">new</a>&nbsp; &nbsp;
+<a href="#M000022">sql_escape</a>&nbsp; &nbsp;
+<a href="#M000021">sql_format</a>&nbsp; &nbsp;
+<a href="#M000023">typecast</a>&nbsp; &nbsp;
+</div>
+
+<table summary="Attributes" cellpadding="5" width="100%">
+<tr><td class="tablesubtitle">Attributes</td></tr>
+</table>
+<table summary="Attribute details" cellspacing="5">
+     <tr valign="top">
+       <td class="attr-name">:connection</td>
+       <td align="center" class="attr-rw">&nbsp;[R]&nbsp;</td>
+       <td></td>
+     </tr>
+     <tr valign="top">
+       <td class="attr-name">:meta</td>
+       <td align="center" class="attr-rw">&nbsp;[R]&nbsp;</td>
+       <td></td>
+     </tr>
+     <tr valign="top">
+       <td class="attr-name">:meta_names</td>
+       <td align="center" class="attr-rw">&nbsp;[R]&nbsp;</td>
+       <td></td>
+     </tr>
+     <tr valign="top">
+       <td class="attr-name">:meta_types</td>
+       <td align="center" class="attr-rw">&nbsp;[R]&nbsp;</td>
+       <td></td>
+     </tr>
+     <tr valign="top">
+       <td class="attr-name">:tables</td>
+       <td align="center" class="attr-rw">&nbsp;[R]&nbsp;</td>
+       <td></td>
+     </tr>
+</table>
+
+
+
+<table summary="Method list" cellpadding="5" width="100%">
+<tr><td class="tablesubtitle">Public Class methods</td></tr>
+</table>
+<table summary="method"  width="100%" cellspacing="0" cellpadding="5" border="0">
+<tr><td class="methodtitle">
+<a name="M000018"></a>
+<a href="DBConnection.src/M000018.html" target="Code" class="methodtitle"
+ onClick="popCode('DBConnection.src/M000018.html');return false;">
+<b>new</b>(dsn, user, pass)
+</a>
+</td></tr>
+</table>
+<div class="description">
+<p>
+initialize opens the connection to the database, prepares variables and
+calls meta (currently AutoCommit is set to false)
+</p>
+</div>
+<table summary="Method list" cellpadding="5" width="100%">
+<tr><td class="tablesubtitle">Public Instance methods</td></tr>
+</table>
+<table summary="method"  width="100%" cellspacing="0" cellpadding="5" border="0">
+<tr><td class="methodtitle">
+<a name="M000019"></a>
+<a href="DBConnection.src/M000019.html" target="Code" class="methodtitle"
+ onClick="popCode('DBConnection.src/M000019.html');return false;">
+<b>close</b>()
+</a>
+</td></tr>
+</table>
+<div class="description">
+<p>
+close method closes the database connection
+</p>
+</div>
+<table summary="method"  width="100%" cellspacing="0" cellpadding="5" border="0">
+<tr><td class="methodtitle">
+<a name="M000020"></a>
+<a href="DBConnection.src/M000020.html" target="Code" class="methodtitle"
+ onClick="popCode('DBConnection.src/M000020.html');return false;">
+<b>load_meta</b>()
+</a>
+</td></tr>
+</table>
+<div class="description">
+<p>
+meta method collects meta information for the database
+</p>
+</div>
+<table summary="method"  width="100%" cellspacing="0" cellpadding="5" border="0">
+<tr><td class="methodtitle">
+<a name="M000021"></a>
+<a href="DBConnection.src/M000021.html" target="Code" class="methodtitle"
+ onClick="popCode('DBConnection.src/M000021.html');return false;">
+<b>sql_format</b>(table, field_name, field_value)
+</a>
+</td></tr>
+</table>
+<div class="description">
+<p>
+Returns a field value formatted for sql statments according to the database
+meta information Essentially it deals with quoting strings
+</p>
+</div>
+<table summary="method"  width="100%" cellspacing="0" cellpadding="5" border="0">
+<tr><td class="methodtitle">
+<a name="M000022"></a>
+<a href="DBConnection.src/M000022.html" target="Code" class="methodtitle"
+ onClick="popCode('DBConnection.src/M000022.html');return false;">
+<b>sql_escape</b>(str)
+</a>
+</td></tr>
+</table>
+<div class="description">
+<p>
+<a href="DBConnection.html#M000022">sql_escape</a> escapes apostrophes in
+character string types
+</p>
+</div>
+<table summary="method"  width="100%" cellspacing="0" cellpadding="5" border="0">
+<tr><td class="methodtitle">
+<a name="M000023"></a>
+<a href="DBConnection.src/M000023.html" target="Code" class="methodtitle"
+ onClick="popCode('DBConnection.src/M000023.html');return false;">
+<b>typecast</b>(table, field_name, field_value, honor_func=false)
+</a>
+</td></tr>
+</table>
+<div class="description">
+<p>
+typecast's a value according to database meta information
+</p>
+</div>
+
+</body>

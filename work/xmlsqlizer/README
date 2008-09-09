@@ -1,0 +1,60 @@
+
+= XMLProof/Ruby - XML Proofreader for Ruby
+
+==<a schema for the rest of us/>
+
+  XMLProof/Ruby is a 100% Ruby API for using XMLProof, an alternate XML schema.
+
+
+== Installation
+
+To install XMLProof simply unpack the gzipped tarball into your local site_ruby path.
+This path is usually +/usr/local/lib/site_ruby/1.6/+.
+An install script is not provided as installation does not require any special files or settings.
+
+
+== Usage
+
+First read the specification for XMLProof at "http://www.transami.net/files/ruby/xmlproof/XMLProof.html".
+
+Example of using the validator:
+
+	require 'xmlproof/validator'
+
+	def validate(xml_filename)
+		validator = XMLProof::Validator.new
+		xml = File.new(file_filename)
+		valid = validator.valid?(xml)
+		if valid
+			puts "GOOD DOCUMENT"
+		else
+			puts "BAD DOCUMENT"
+			validator.errors.each do |e|
+				puts "xpath->#{e[0]} \t namespace->#{e[1]} \t error->#{e[2]}"
+			end
+		end
+	end
+
+
+
+Example of using the SQLCreator:
+
+	require 'xmlproof/sqlcreator'
+
+	def createsql(xps_filename)
+		sql_creator = XMLProof::SQLCreator.new
+		xps = File.new(xps_filename)
+		sqls = sql_creator.generate_sqls(xps)
+		sqls.each do |statement|
+			puts statement
+		end
+	end
+
+
+
+== Authentication
+
+Author:: Thomas Sawyer
+Requires:: Ruby 1.6.5+, REXML 2.1+
+License:: Copyright (c) 2002 Thomas Sawyer, transami@transami.net under the Ruby License
+

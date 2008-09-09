@@ -1,0 +1,13 @@
+*0.1*
+
+* Organized all require dependencies into abstract_adapater.rb 
+  --a couple were out of place anyway.
+
+* Made modification so that adapters no longer need a *_connection
+  method. Instead adapters simply add a hash reference in the
+  ConnectionAdapters::Available module constant.
+
+* Moved connection thread code to DatabaseConnection module.
+  I'm assuming that won't be a problem.
+  
+* Created Active Adapter from Active Record's adapter code.

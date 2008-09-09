@@ -1,0 +1,39 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>insert_into_database (DBize::Record)</title>
+<link rel=StyleSheet href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body bgcolor="white">
+<pre><span class="cmt"># File dbize.rb, line 154</span>
+    <span class="kw">def</span> insert_into_database(exclude=[])
+      newid = <span class="kw">nil</span>
+      fields = []
+      DBize.dbi.meta_names[table].each <span class="kw">do</span> |name|
+        <span class="kw">if</span> respond_to?(name.intern) <span class="kw">and</span> name != DBize.id_field <span class="kw">and</span> <span class="kw">not</span> exclude.include?(name)
+          new_value = send(name.intern)
+          fields &lt;&lt; [name, new_value]
+        <span class="kw">end</span>
+      <span class="kw">end</span>
+      <span class="kw">if</span> <span class="kw">not</span> fields.empty?
+        sql = &quot;INSERT INTO #{table} (&quot; &lt;&lt; fields.collect{ |pair| pair[0] }.join(<span class="str">','</span>) &lt;&lt; <span class="str">') VALUES ('</span> &lt;&lt; fields.collect{ |pair| DBize.dbi.sql_format(table, pair[0], pair[1]) }.join(<span class="str">','</span>) &lt;&lt; <span class="str">')'</span>
+        sqlg = &quot;SELECT currval('#{table}_#{Dbize.id_field}_seq') as recid&quot;
+        DBize.dbi.connection.transaction <span class="kw">do</span>
+          DBize.dbi.connection.do(sql)
+          newid = DBize.dbi.connection.select_one(sqlg)[<span class="str">'recid'</span>]
+        <span class="kw">end</span>
+      <span class="kw">end</span>
+      <span class="cmt"># subrecords</span>
+      instance_variables.each { |iv|
+        iobj = instance_eval &quot;#{iv}&quot;
+        <span class="kw">if</span> iobj.is_a?(Subrecords)
+          iobj.insert_into_database(force_insert, *args)
+        <span class="kw">end</span>
+      }
+      <span class="cmt">#return rc</span>
+      <span class="kw">return</span> newid
+    <span class="kw">end</span></pre>
+</body>
+</html>

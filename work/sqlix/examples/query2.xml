@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<?xml:ns name="example" space="http://www.transami.net/namespace/testing" ?>
+<?xml:ns name="sqlix" space="http://www.transami.net/namespace/dbxml" ?>
+
+<!-- These examples depend on a specific database -->
+
+<example:sqlix_example2>
+  <sqlix:query>
+    <c query="SELECT c.record as record, c.name as name FROM c WHERE record=10;" attributes="record">
+      <address query="SELECT address.record as &quot;@record&quot;, address.address as address FROM address WHERE table_ref='c' AND record_ref=?;" references="record"/>
+    </c>
+  </sqlix:query>
+</example:sqlix_example2>

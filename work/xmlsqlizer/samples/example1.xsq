@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml:ns name="example" uri="http://www.transami.net/namespace/testing" ?>
+<?xml:ns name="xsq" uri="http://www.transami.net/namespace/xmlsqlesque" ?>
+
+<xsq:schema>
+	<example:shiporder orderid="serial primary key">
+		<orderperson>text default ''</orderperson>
+		<orderclerk>text default ''</orderclerk>
+		<shipto>
+			<name>text default ''</name>
+			<address>text default ''</address>
+			<city>text default ''</city>
+			<country>text default 'US'</country>
+		</shipto>
+		<item>
+			<title>text default ''</title>
+			<note>text default ''</note>
+			<quantity>int default 0</quantity>
+			<price>float default 0</price>
+		</item>
+	</example:shiporder>
+</xsq:schema>

@@ -1,0 +1,24 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>load_meta (DBize::DBConnection)</title>
+<link rel=StyleSheet href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body bgcolor="white">
+<pre><span class="cmt"># File dbize.rb, line 288</span>
+  <span class="kw">def</span> load_meta
+			@tables = @connection.tables  <span class="cmt"># .select { |table| table !~ /^pg_/ }  # this only works with postgresql to remove system tables</span>
+			@tables.each <span class="kw">do</span> |table|
+				@meta[table] = @connection.columns(table)
+				@meta_names[table] = []
+				@meta_types[table] = {}
+				@meta[table].each <span class="kw">do</span> |column|
+					@meta_names[table] &lt;&lt; column[<span class="str">'name'</span>]                                  <span class="cmt"># make an array of column names</span>
+				  @meta_types[table].update({ column[<span class="str">'name'</span>] =&gt; column[<span class="str">'type_name'</span>] })  <span class="cmt"># make a hash of column names =&gt; column types</span>
+				<span class="kw">end</span>
+			<span class="kw">end</span>
+		<span class="kw">end</span></pre>
+</body>
+</html>

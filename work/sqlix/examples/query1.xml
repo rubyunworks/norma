@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<?xml:ns name="e" space="http://www.transami.net/namespace/testing" ?>
+<?xml:ns name="sqlix" space="http://www.transami.net/namespace/dbxml" ?>
+
+<!-- These examples depend on a specific database -->
+
+<example1>
+  <sqlix:query>
+    <c query='SELECT c.record as record, c.name as name FROM c WHERE record=20;'/>
+  </sqlix:query>
+</example1>

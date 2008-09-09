@@ -1,0 +1,23 @@
+
+How might a an fully dyanmically typed object model like that supported by Ruby be mapped to a statically typed relational database model?
+
+What if each table had a separate column per attribute per fundamental class? So
+
+  class Example
+    attr :foo
+  end
+
+Would have a table something like:
+
+  CREATE TABLE Example (
+    foo_Coerce   VARCHAR(6)
+    foo_Text     TEXT
+    foo_Number   FLOAT
+    foo_Boolean  BOOL
+    foo_Join     INT
+  );
+
+The fooCoerce would express the conversion of content of one of the three core scalar types. Gnereally to_s or to_sym for Text, to_i or to_f for Number and to_bool for Boolean.
+
+Any other class would be joined to a different table via to_{class} and the foo_Join field, which holds a foreign key.
+

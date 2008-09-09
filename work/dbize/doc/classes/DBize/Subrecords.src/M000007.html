@@ -1,0 +1,25 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>load_from_database (DBize::Subrecords)</title>
+<link rel=StyleSheet href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body bgcolor="white">
+<pre><span class="cmt"># File dbize.rb, line 204</span>
+    <span class="kw">def</span> load_from_database(*args)
+      <span class="kw">self</span>.clear
+      sql = &quot;SELECT * FROM #{table} WHERE &quot; &lt;&lt; references.collect { |r| &quot;#{r}=#{DBize.dbi.sql_format(table, r.to_s, send(r))}&quot; }.join(<span class="str">' AND '</span>)
+      recs = DBize.dbi.connection.select_all(sql)
+      recs.each { |r|
+        <span class="kw">self</span> &lt;&lt; subclass.new(*args)
+        r.each_with_name { |value, name|
+          <span class="kw">if</span> <span class="kw">self</span>.last.respond_to?(&quot;#{name}=&quot;.intern)
+            <span class="kw">self</span>.last.send(&quot;#{name}=&quot;.intern, value)
+          <span class="kw">end</span>
+        }
+      }
+    <span class="kw">end</span></pre>
+</body>
+</html>

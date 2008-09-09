@@ -1,0 +1,10 @@
+*0.2*
+
+* Should Transaction::Simple be in here?
+* I assumed Fixtures was wanted. Correct?
+* Anything else from Active Record here?
+* Fix rakefile
+* Fix README
+* Adjust tests
+* Merge changes made to any of these files in the last week or so,
+  i.e. the latest Active Record updates.

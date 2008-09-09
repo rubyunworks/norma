@@ -1,0 +1,19 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>insert_into_database (DBize::Subrecords)</title>
+<link rel=StyleSheet href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body bgcolor="white">
+<pre><span class="cmt"># File dbize.rb, line 237</span>
+    <span class="kw">def</span> insert_into_database
+      DBize.dbi.connection.transaction {
+        <span class="kw">self</span>.each { |r|
+          r.insert_into_database
+        }
+      }
+    <span class="kw">end</span></pre>
+</body>
+</html>

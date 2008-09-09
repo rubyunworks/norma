@@ -1,0 +1,31 @@
+<sale>
+
+  <customer id="1">
+    <name>Test Customer 1</name>
+    <billto>
+      947 W. Alameda
+      Santa Fe, NM 87501
+    </billto>
+  </customer>
+
+  <detail>
+    <item id="10">
+      <description>Pull Lever</description>
+      <list>10.00</list>
+    </item>
+    <discount>50%</discount>
+    <price>5.00</price>
+  </detail>
+
+  <detail>
+    <item id="12">
+      <description>Door Knob</description>
+      <list>20.00</list>
+    </item>
+    <discount>50%</discount>
+    <price>10.00</price>
+  </detail>
+
+  <total-price>15.00</total-price>
+
+</sale>

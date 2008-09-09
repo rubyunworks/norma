@@ -1,0 +1,17 @@
+---
+
+publish: !!publish
+  type     : web
+  host     : rubyforge
+  username : transami
+  project  : norma
+
+rdoc: !!rdoc
+  title    : Normal Ivy
+  template : jamis
+  options  : ['--all', '--inline-source']
+  source   : source/head
+  include  : [ 'lib/**/*', '[A-Z]*' ]
+  exclude  : [ Reapfile ]
+  output   : api
+

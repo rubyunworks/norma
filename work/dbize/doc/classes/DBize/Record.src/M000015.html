@@ -1,0 +1,44 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>update_database (DBize::Record)</title>
+<link rel=StyleSheet href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body bgcolor="white">
+<pre><span class="cmt"># File dbize.rb, line 121</span>
+    <span class="kw">def</span> update_database
+      res = <span class="kw">nil</span>
+      sql = &quot;SELECT * FROM #{table} WHERE #{DBize.id_field}=#{record.to_i}&quot;
+      r = DBize.dbi.connection.select_one(sql)
+      raise <span class="str">'can not update because record not found'</span> <span class="kw">if</span> <span class="kw">not</span> r
+      <span class="cmt">#</span>
+      fields = []
+      r.each_with_name <span class="kw">do</span> |value, name|
+        <span class="kw">if</span> respond_to?(name.intern)
+          new_value = send(name.intern)
+          <span class="kw">if</span> new_value != value
+            fields &lt;&lt; [name, new_value]
+          <span class="kw">end</span>
+        <span class="kw">end</span>
+      <span class="kw">end</span>
+      <span class="kw">if</span> <span class="kw">not</span> fields.empty?
+        sql = &quot;UPDATE #{table} SET &quot; &lt;&lt; fields.collect{ |pair| &quot;#{pair[0]}=#{DBize.dbi.sql_format(table, pair[0], pair[1])}&quot; }.join(<span class="str">','</span>) &lt;&lt; &quot; WHERE #{DBize.id_field}=#{record}&quot;
+        DBize.dbi.connection.transaction <span class="kw">do</span>
+          DBize.dbi.connection.do(sql)
+          res = <span class="kw">true</span>
+        <span class="kw">end</span>
+      <span class="kw">end</span>
+      <span class="cmt"># subrecords</span>
+      instance_variables.each { |iv|
+        iobj = instance_eval &quot;#{iv}&quot;
+        <span class="kw">if</span> iobj.is_a?(Subrecords)
+          iobj.update_database(force_insert, *args)
+        <span class="kw">end</span>
+      }
+      <span class="cmt">#return rc</span>
+      <span class="kw">return</span> res
+    <span class="kw">end</span></pre>
+</body>
+</html>

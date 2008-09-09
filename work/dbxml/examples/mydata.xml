@@ -1,0 +1,14 @@
+<customers>
+
+<customer record='2'>
+	<name>Lil Kim</name>
+	<phone>505-905-4066</phone>
+	<address>
+		118 San Salvador
+		Marco Fe NM, 87503
+	</address>
+	<on_account>Yes</on_account>
+	<balance>1000.00</balance>
+</customer>
+
+</customers>

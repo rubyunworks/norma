@@ -1,0 +1,39 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>sql_format (DBize::DBConnection)</title>
+<link rel=StyleSheet href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body bgcolor="white">
+<pre><span class="cmt"># File dbize.rb, line 303</span>
+  <span class="kw">def</span> sql_format(table, field_name, field_value)
+			<span class="kw">if</span> <span class="kw">not</span> @meta_types.has_key?(table)
+				raise &quot;invalid table: #{table}&quot;
+			<span class="kw">end</span>
+			<span class="kw">if</span> <span class="kw">not</span> @meta_types[table].has_key?(field_name)
+				raise &quot;invalid field name: #{field_name}&quot;
+			<span class="kw">end</span>
+			<span class="kw">case</span> @meta_types[table][field_name].downcase
+			<span class="kw">when</span> <span class="re">/int/</span>, <span class="re">/serial/</span>
+				<span class="kw">if</span> type != <span class="str">'interval'</span> <span class="kw">and</span> type != <span class="str">'point'</span>
+					typified_value = field_value
+				<span class="kw">end</span>
+			<span class="kw">when</span> <span class="re">/float/</span>, <span class="re">/double/</span>, <span class="re">/money/</span>, <span class="re">/numeric/</span>, <span class="re">/decimal/</span>
+				typified_value = field_value
+			<span class="kw">when</span> <span class="re">/bool/</span>
+				typified_value = field_value
+			<span class="kw">when</span> <span class="re">/timestamp/</span>, <span class="re">/date/</span>
+        <span class="kw">if</span> field_value.to_s.strip.empty?
+          typified_value = <span class="str">'NULL'</span>
+        <span class="kw">else</span>
+          typified_value = sql_escape(field_value.to_s.strip).quote(<span class="kw">true</span>)
+        <span class="kw">end</span>
+			<span class="kw">when</span> <span class="re">/var/</span>, <span class="re">/char/</span>, <span class="re">/text/</span>
+				typified_value = sql_escape(field_value.to_s.strip).quote(<span class="kw">true</span>)
+			<span class="kw">end</span>
+			<span class="kw">return</span> typified_value
+		<span class="kw">end</span></pre>
+</body>
+</html>

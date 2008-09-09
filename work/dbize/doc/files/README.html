@@ -1,0 +1,130 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html><head>
+  <title>File: README</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel=StyleSheet href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript" language="JavaScript">
+  <!--
+  function popCode(url) {
+    window.open(url, "Code", 
+          "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+  //-->
+  </script>
+</head>
+
+<body bgcolor="white">
+<table summary="Information on file" width="100%">
+ <tr class="title-row">
+ <td><table summary="layout" width="100%"><tr>
+   <td class="big-title-font" colspan="2">README</td>
+   <td align="right"><table summary="layout" cellspacing="0" cellpadding="2">
+         <tr>
+           <td  class="small-title-font">Path:</td>
+           <td class="small-title-font">README</td>
+         </tr>
+         <tr>
+           <td class="small-title-font">Modified:</td>
+           <td class="small-title-font">Mon Sep 02 23:25:02 MDT 2002</td>
+         </tr>
+        </table>
+    </td></tr></table></td>
+  </tr>
+</table>
+  <!-- banner header -->
+
+
+
+<div class="description"><h1><a href="../classes/DBize.html">DBize</a></h1>
+<h2>Introduction</h2>
+<p>
+<a href="../classes/DBize.html">DBize</a> is a mixin to allow objects to be
+easily stored and retrieved from a database.
+</p>
+<h2>Installation</h2>
+<p>
+To install simply unpack the gzipped tarball into your local site_ruby
+path. This path is usually +/usr/local/lib/site_ruby/1.6/+. An install
+script is not currently provided.
+</p>
+<h2>Current Limitations</h2>
+<p>
+Presently <a href="../classes/DBize.html">DBize</a> may be resricted to use
+with PostgreSQL, since <a href="../classes/DBize.html">DBize</a> depends on
+the use of sequences in the form of: <em>{table}_{attribute}_seq</em> when
+instering records. This will be corrected in the future.
+</p>
+<h2>Requirements</h2>
+<p>
+Ruby 1.6.7+ DBI 1.26+ DBD
+</p>
+<h2>Usage</h2>
+<p>
+Your object will require a new method called <em>table</em> which returns
+the name of the table that stores the object type. it will also need
+methods <em>record</em> and <em>record=</em> to store the current
+&quot;id&quot; of a record.
+</p>
+<p>
+After this, simply mixin a class with include <a
+href="../classes/DBize/Record.html">DBize::Record</a>. Doing so will give
+your object some new methods such as <a
+href="../classes/DBize/Record.html#M000016">insert_into_database</a> and <a
+href="../classes/DBize/Record.html#M000014">load_from_database</a>.
+</p>
+<p>
+The key to <a href="../classes/DBize.html">DBize</a>'s automatic ability is
+the use of the database attribute (field) names as method calls to the
+mixed object. Thus your object needs to have <em>attribute&lt;i&gt; and
+&lt;i&gt;attribute=</em> methods defined for the fields you wish to be
+soted into the table. <a href="../classes/DBize.html">DBize</a> will ignore
+unused fields, so you don't necessarily need to cover every databse
+attribute and vice-versa.
+</p>
+<p>
+Please refer to the rdocs, to understand this better.
+</p>
+<h2>Authentication</h2>
+<table>
+<tr><td valign="top">Package:</td><td><a href="../classes/DBize.html">DBize</a>
+
+</td></tr>
+<tr><td valign="top">Author:</td><td>Thomas Sawyer
+
+</td></tr>
+<tr><td valign="top">License:</td><td>Copyright (c) 2002 Thomas Sawyer, LGPL
+
+</td></tr>
+</table>
+<h2>Copy Notice</h2>
+<p>
+<a href="../classes/DBize.html">DBize</a> is free software; you can
+redistribute it and/or modify it under the terms of the GNU Lesser General
+Public License as published by the Free Software Foundation; either version
+2 of the License, or (at your option) any later version.
+</p>
+<p>
+<a href="../classes/DBize.html">DBize</a> is distributed in the hope that
+it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Lesser General Public License for more details.
+</p>
+<p>
+You should have received a copy of the GNU Lesser General Public License
+along with <a href="../classes/DBize.html">DBize</a>; if not, write to the
+Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+02111-1307 USA
+</p>
+</div>
+
+
+
+
+
+
+
+</body>

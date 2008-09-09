@@ -1,0 +1,67 @@
+= DBize
+
+== Introduction
+
+DBize is a mixin to allow objects
+to be easily stored and retrieved from a database.
+
+== Installation
+
+To install simply unpack the gzipped tarball into your local site_ruby path.
+This path is usually +/usr/local/lib/site_ruby/1.6/+.
+An install script is not currently provided.
+
+== Current Limitations
+
+Presently DBize may be resricted to use with PostgreSQL,
+since DBize depends on the use of sequences in the form of:
+<i>{table}_{attribute}_seq</i> when instering records.
+This will be corrected in the future.
+
+== Requirements
+
+Ruby 1.6.7+
+DBI 1.26+
+DBD
+
+== Usage
+
+Your object will require a new method called <i>table</i>
+which returns the name of the table that stores the object type.
+it will also need methods <i>record</i> and <i>record=</i> to 
+store the current "id" of a record.
+
+After this, simply mixin a class with include DBize::Record.
+Doing so will give your object some new methods such as
+insert_into_database and load_from_database.
+
+The key to DBize's automatic ability is the use of the
+database attribute (field) names as method calls to the mixed object.
+Thus your object needs to have <i>attribute<i> and <i>attribute=</i>
+methods defined for the fields you wish to be soted into the table.
+DBize will ignore unused fields, so you don't necessarily need to cover
+every databse attribute and vice-versa.
+
+Please refer to the rdocs, to understand this better.
+
+== Authentication
+
+Package:: DBize
+Author:: Thomas Sawyer
+License:: Copyright (c) 2002 Thomas Sawyer, LGPL
+
+== Copy Notice
+
+DBize is free software; you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+DBize is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with DBize; if not, write to the Free Software Foundation, Inc.,
+59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
