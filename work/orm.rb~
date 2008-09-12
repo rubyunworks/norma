@@ -1,0 +1,132 @@
+#!/usr/bin/env ruby
+
+module Norma
+
+  EXCLUDE_FIELDS = [ 'as_record' ]
+
+  def create_table_link
+    sql = <<-END
+      create table link (
+        id     int not null,
+        class  varchar(36),
+        name   varchar(36),
+        r      int references link(id),
+        n      numeric,
+        s      text,
+        t      timestamp,
+        b      bool,
+        a      int[],
+        h      int[]
+      );
+    END
+  end
+
+end
+
+
+class Object
+
+  def state
+    fields = instance_variables.collect { |f| f.sub(/^@/,'') } - Norma::EXCLUDE_FIELDS
+    values = instance_variables.collect { |v| instance_variable_get(v) }
+    return fields.zip(values)
+  end
+
+end
+
+
+class Store
+
+  class IV
+
+    def initialize( object, name, value )
+      set( oid, name, value )
+    end
+   
+    def set( object, name, value )
+      clear
+
+      @object = object
+      @class = value.class
+      @name = name
+
+      case @class
+      when Numeric
+        @n = value
+      when String, Symbol
+        @s = value
+      when Time, Date
+        @t = value
+      when TrueClass, FalseClass
+        @b = value
+      when Array
+        @a = value.collect { |o| o.record_id }
+      when Hash
+        @h = value.collect { |k,v| [k.record_id, v.record_id] }.flatten
+      else
+        @r = value.record_id
+      end
+
+      self
+    end
+
+    def clear
+      @n, @s, @t, @b, @a, @h, @r = *([nil]*8)
+    end
+
+    def update_sql
+      sql = ''
+      sql << %|UPDATE iv\n|
+      sql << %|SET n=#{@n}, s='#{@s}', t='#{@t}', b=#{@b}, a=#{@a}, h=#{@h}, r=#{@r}\n|
+      sql << %|WHERE id=#{@object} AND name='#{@name}'|
+      sql << ';'
+    end
+
+  end
+
+end
+
+
+class Store::Psql < Store
+
+  def save( object )
+    klass = object.class
+    state = object.state
+    recid = object.record_id
+
+    sql = []
+    state.each do |name, value|
+      sql << IV.new( recid, name, value ).update_sql
+    end
+  end
+
+end
+
+
+
+
+
+  class Record
+
+    def initialize( object )
+      @object = object
+    end
+
+    def store
+      @object.class.store
+    ebd
+
+    def save
+      store.save( @object )
+    end
+
+  end
+
+
+  class String
+
+    def as_record
+      @as_record ||= Record.new( self )
+    end
+
+  end
