@@ -1,16 +1,14 @@
 begin
-  require 'postgres'
-rescue Object => ex
-  puts 'Ruby-PostgreSQL bindings are not installed!'
-  #Logger.error 'Ruby-PostgreSQL bindings are not installed!'
-  #Logger.error ex
+  require 'mysql'
+rescue Object
+  puts 'Ruby MySQL bindings are not installed!'
 end
 
 
 module Norma
 
-  # Postgresql Store
-  class Database::Postgres < Database
+  # Mysql Store
+  class Database::Mysql < Database
 
     # Create a connection to database.
     def self.connect(config)

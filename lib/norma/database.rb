@@ -47,11 +47,10 @@ module Norma
       raise InterfaceError, "no mint_id method"
     end
 
-    # TODO: boolean ?
-
     # Load a record. This calls read, but caches
     # the result. This is very important, otherwise
     # an object will be loaded more than once.
+    #
     def load( id, object=nil )
       @cache[id] ||= read(id)
     end
@@ -143,12 +142,12 @@ module Norma
     #  object.inspect
     #end
 
-    def sqlString(object)
-      { :value => object.inspect }
-    end
-
     def sqlSymbol(object)
       { :value => object.to_s.inspect }
+    end
+
+    def sqlString(object)
+      { :value => object.inspect }
     end
 
     def sqlFixnum(object)
@@ -183,13 +182,13 @@ module Norma
     # Record -> Object #
     ####################
 
+    def newSymbol(rec)
+      rec[1].to_sym
+    end
+
     #
     def newString(rec)
       rec[1]
-    end
-
-    def newSymbol(rec)
-      rec[1].to_sym
     end
 
     def newFixnum(rec)
