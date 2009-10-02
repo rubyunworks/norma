@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Record -&gt; Object #"
+full_name: Norma::Database#newSymbol
+is_singleton: false
+name: newSymbol
+params: (rec)
+visibility: public

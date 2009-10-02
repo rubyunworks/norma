@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Create a connection to database.
+full_name: Norma::Database::Postgres::connect
+is_singleton: true
+name: connect
+params: (config)
+visibility: public

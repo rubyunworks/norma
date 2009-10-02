@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Save (or insert) a record.
+full_name: Norma::Database#save
+is_singleton: false
+name: save
+params: (klass, obj, id=nil)
+visibility: public

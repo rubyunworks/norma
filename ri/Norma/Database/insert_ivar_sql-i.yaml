@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: []
+
+full_name: Norma::Database#insert_ivar_sql
+is_singleton: false
+name: insert_ivar_sql
+params: (object, field, value)
+visibility: public

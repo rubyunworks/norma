@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Read object from database.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "TODO: Use a join query if possible and if more efficient."
+full_name: Norma::Database::Postgres#read
+is_singleton: false
+name: read
+params: (id, object=nil)
+visibility: public

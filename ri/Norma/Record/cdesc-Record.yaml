@@ -1,0 +1,38 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: 
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: Access the delegate object.
+  name: object
+  rw: R
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Record delegator
+- !ruby/struct:RDoc::Markup::Flow::RULE 
+  width: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Record delegator
+constants: []
+
+full_name: Norma::Record
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: id
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: persisted!
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: persisted?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: reload
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: save
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: store
+name: Record
+superclass: Object

@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Object#record_id
+is_singleton: false
+name: record_id
+params: ()
+visibility: public

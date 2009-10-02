@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Execute SQL
+full_name: Norma::Database::Mysql#execute
+is_singleton: false
+name: execute
+params: (sql)
+visibility: public

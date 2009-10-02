@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Return next available object record index.
+full_name: Norma::Database#mint_id
+is_singleton: false
+name: mint_id
+params: ()
+visibility: public

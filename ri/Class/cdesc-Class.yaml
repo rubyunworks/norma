@@ -1,0 +1,19 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: []
+
+constants: []
+
+full_name: Class
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: record_store
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: records
+name: Class
+superclass: Object

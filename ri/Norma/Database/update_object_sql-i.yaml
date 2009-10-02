@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: []
+
+full_name: Norma::Database#update_object_sql
+is_singleton: false
+name: update_object_sql
+params: (object)
+visibility: public

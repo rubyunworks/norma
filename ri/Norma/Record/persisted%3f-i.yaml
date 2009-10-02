@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Is the object persisted in the database?
+full_name: Norma::Record#persisted?
+is_singleton: false
+name: persisted?
+params: ()
+visibility: public

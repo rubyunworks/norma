@@ -1,0 +1,41 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: connect
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Postgresql Store
+- !ruby/struct:RDoc::Markup::Flow::RULE 
+  width: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Postgresql Store
+- !ruby/struct:RDoc::Markup::Flow::RULE 
+  width: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Postgresql Store
+constants: []
+
+full_name: Norma::Database::Postgres
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: bootstrap
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: config
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: down
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: execute
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: mint_id
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: read
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: save
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: up
+name: Postgres
+superclass: Database

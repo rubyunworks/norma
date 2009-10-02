@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: def sqlObject(object)
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  object.inspect\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: end
+full_name: Norma::Database#sqlSymbol
+is_singleton: false
+name: sqlSymbol
+params: (object)
+visibility: public

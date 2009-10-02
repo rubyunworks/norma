@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Load a record. This calls read, but caches the result. This is very important, otherwise an object will be loaded more than once.
+full_name: Norma::Database#load
+is_singleton: false
+name: load
+params: ( id, object=nil )
+visibility: public

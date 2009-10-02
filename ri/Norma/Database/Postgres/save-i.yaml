@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Save-out an object to the database.
+full_name: Norma::Database::Postgres#save
+is_singleton: false
+name: save
+params: (object)
+visibility: public

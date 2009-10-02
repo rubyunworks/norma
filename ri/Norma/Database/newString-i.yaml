@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: []
+
+full_name: Norma::Database#newString
+is_singleton: false
+name: newString
+params: (rec)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Return database conguration.
+full_name: Norma::Database::Postgres#config
+is_singleton: false
+name: config
+params: ()
+visibility: public

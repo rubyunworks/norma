@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Select records.
+full_name: Norma::Database#select
+is_singleton: false
+name: select
+params: (&block)
+visibility: public

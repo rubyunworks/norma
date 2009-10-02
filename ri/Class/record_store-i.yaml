@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Set the storage adapter for the class. This allows differnt classes to be stored in different databases. By default the store set in the global $norma_store is used.
+full_name: Class#record_store
+is_singleton: false
+name: record_store
+params: (store=nil)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Load
+full_name: Norma::Record#reload
+is_singleton: false
+name: reload
+params: ()
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Norma::Database::Mysql#bootstrap
+is_singleton: false
+name: bootstrap
+params: ()
+visibility: public

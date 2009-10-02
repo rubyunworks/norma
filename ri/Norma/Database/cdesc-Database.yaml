@@ -1,0 +1,87 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Base class for database adapters. This class is modeled for a minimal Postgresql adapter as a reference point.
+- !ruby/struct:RDoc::Markup::Flow::RULE 
+  width: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Base class for database adapters. This class is modeled for a minimal Postgresql adapter as a reference point.
+constants: 
+- !ruby/object:RDoc::RI::Constant 
+  comment: []
+
+  name: CORE
+  value: "[String, Symbol, Fixnum, Float, Range, Time, Array, Hash]"
+full_name: Norma::Database
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: bootstrap
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: delete
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: insert_class_sql
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: insert_ivar_sql
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: insert_object_sql
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: insert_sql
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: load
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: mint_id
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: newArray
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: newFixnum
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: newFloat
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: newHash
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: newRange
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: newString
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: newSymbol
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: newTime
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: read
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: save
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: select
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: sqlArray
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: sqlFixnum
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: sqlFloat
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: sqlHash
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: sqlRange
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: sqlString
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: sqlSymbol
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: sqlTime
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: update_class_sql
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: update_ivar_sql
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: update_object_sql
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: update_sql
+name: Database
+superclass: Object

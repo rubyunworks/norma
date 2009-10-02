@@ -1,0 +1,18 @@
+--- !ruby/object:RDoc::RI::ModuleDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: bootstrap
+comment: 
+constants: 
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  name: EXCLUDE_FIELDS
+  value: "[ '@as_record' ]"
+full_name: Norma
+includes: []
+
+instance_methods: []
+
+name: Norma
