@@ -1,0 +1,16 @@
+--- 
+title  : Norma
+suite  : rubyworks
+summary: Stealth ORM
+contact: trans <transfire@gmail.com>
+created: 2008-09-09
+
+authors:
+  - Thomas Sawyer
+
+description:
+  Norma (or Normal Ivy) is stealth ORM. It literally conects the
+  entire Ruby instance system to a database.
+
+copyright:
+  Copyright (c) 2008 Thomas Sawyer
